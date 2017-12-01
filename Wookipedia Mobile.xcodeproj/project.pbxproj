@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A7371F811FD1CD7B00E2B61A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371F801FD1CD7B00E2B61A /* AppDelegate.swift */; };
+		A7371F831FD1CD7B00E2B61A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371F821FD1CD7B00E2B61A /* ViewController.swift */; };
+		A7371F861FD1CD7B00E2B61A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7371F841FD1CD7B00E2B61A /* Main.storyboard */; };
+		A7371F881FD1CD7B00E2B61A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7371F871FD1CD7B00E2B61A /* Assets.xcassets */; };
+		A7371F8B1FD1CD7B00E2B61A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7371F891FD1CD7B00E2B61A /* LaunchScreen.storyboard */; };
+		A7371F961FD1CD7B00E2B61A /* Wookipedia_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371F951FD1CD7B00E2B61A /* Wookipedia_MobileTests.swift */; };
+		A7371FA11FD1CD7C00E2B61A /* Wookipedia_MobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371FA01FD1CD7C00E2B61A /* Wookipedia_MobileUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A7371F921FD1CD7B00E2B61A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7371F751FD1CD7B00E2B61A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7371F7C1FD1CD7B00E2B61A;
+			remoteInfo = "Wookipedia Mobile";
+		};
+		A7371F9D1FD1CD7C00E2B61A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7371F751FD1CD7B00E2B61A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7371F7C1FD1CD7B00E2B61A;
+			remoteInfo = "Wookipedia Mobile";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A7371F7D1FD1CD7B00E2B61A /* Wookipedia Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wookipedia Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7371F801FD1CD7B00E2B61A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A7371F821FD1CD7B00E2B61A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A7371F851FD1CD7B00E2B61A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A7371F871FD1CD7B00E2B61A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A7371F8A1FD1CD7B00E2B61A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A7371F8C1FD1CD7B00E2B61A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7371F911FD1CD7B00E2B61A /* Wookipedia MobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wookipedia MobileTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7371F951FD1CD7B00E2B61A /* Wookipedia_MobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wookipedia_MobileTests.swift; sourceTree = "<group>"; };
+		A7371F971FD1CD7B00E2B61A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7371F9C1FD1CD7C00E2B61A /* Wookipedia MobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wookipedia MobileUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7371FA01FD1CD7C00E2B61A /* Wookipedia_MobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wookipedia_MobileUITests.swift; sourceTree = "<group>"; };
+		A7371FA21FD1CD7C00E2B61A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A7371F7A1FD1CD7B00E2B61A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7371F8E1FD1CD7B00E2B61A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7371F991FD1CD7B00E2B61A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A7371F741FD1CD7B00E2B61A = {
+			isa = PBXGroup;
+			children = (
+				A7371F7F1FD1CD7B00E2B61A /* Wookipedia Mobile */,
+				A7371F941FD1CD7B00E2B61A /* Wookipedia MobileTests */,
+				A7371F9F1FD1CD7C00E2B61A /* Wookipedia MobileUITests */,
+				A7371F7E1FD1CD7B00E2B61A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A7371F7E1FD1CD7B00E2B61A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7371F7D1FD1CD7B00E2B61A /* Wookipedia Mobile.app */,
+				A7371F911FD1CD7B00E2B61A /* Wookipedia MobileTests.xctest */,
+				A7371F9C1FD1CD7C00E2B61A /* Wookipedia MobileUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7371F7F1FD1CD7B00E2B61A /* Wookipedia Mobile */ = {
+			isa = PBXGroup;
+			children = (
+				A7371F801FD1CD7B00E2B61A /* AppDelegate.swift */,
+				A7371F821FD1CD7B00E2B61A /* ViewController.swift */,
+				A7371F841FD1CD7B00E2B61A /* Main.storyboard */,
+				A7371F871FD1CD7B00E2B61A /* Assets.xcassets */,
+				A7371F891FD1CD7B00E2B61A /* LaunchScreen.storyboard */,
+				A7371F8C1FD1CD7B00E2B61A /* Info.plist */,
+			);
+			path = "Wookipedia Mobile";
+			sourceTree = "<group>";
+		};
+		A7371F941FD1CD7B00E2B61A /* Wookipedia MobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				A7371F951FD1CD7B00E2B61A /* Wookipedia_MobileTests.swift */,
+				A7371F971FD1CD7B00E2B61A /* Info.plist */,
+			);
+			path = "Wookipedia MobileTests";
+			sourceTree = "<group>";
+		};
+		A7371F9F1FD1CD7C00E2B61A /* Wookipedia MobileUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A7371FA01FD1CD7C00E2B61A /* Wookipedia_MobileUITests.swift */,
+				A7371FA21FD1CD7C00E2B61A /* Info.plist */,
+			);
+			path = "Wookipedia MobileUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A7371F7C1FD1CD7B00E2B61A /* Wookipedia Mobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7371FA51FD1CD7C00E2B61A /* Build configuration list for PBXNativeTarget "Wookipedia Mobile" */;
+			buildPhases = (
+				A7371F791FD1CD7B00E2B61A /* Sources */,
+				A7371F7A1FD1CD7B00E2B61A /* Frameworks */,
+				A7371F7B1FD1CD7B00E2B61A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Wookipedia Mobile";
+			productName = "Wookipedia Mobile";
+			productReference = A7371F7D1FD1CD7B00E2B61A /* Wookipedia Mobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A7371F901FD1CD7B00E2B61A /* Wookipedia MobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7371FA81FD1CD7C00E2B61A /* Build configuration list for PBXNativeTarget "Wookipedia MobileTests" */;
+			buildPhases = (
+				A7371F8D1FD1CD7B00E2B61A /* Sources */,
+				A7371F8E1FD1CD7B00E2B61A /* Frameworks */,
+				A7371F8F1FD1CD7B00E2B61A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A7371F931FD1CD7B00E2B61A /* PBXTargetDependency */,
+			);
+			name = "Wookipedia MobileTests";
+			productName = "Wookipedia MobileTests";
+			productReference = A7371F911FD1CD7B00E2B61A /* Wookipedia MobileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A7371F9B1FD1CD7B00E2B61A /* Wookipedia MobileUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7371FAB1FD1CD7C00E2B61A /* Build configuration list for PBXNativeTarget "Wookipedia MobileUITests" */;
+			buildPhases = (
+				A7371F981FD1CD7B00E2B61A /* Sources */,
+				A7371F991FD1CD7B00E2B61A /* Frameworks */,
+				A7371F9A1FD1CD7B00E2B61A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A7371F9E1FD1CD7C00E2B61A /* PBXTargetDependency */,
+			);
+			name = "Wookipedia MobileUITests";
+			productName = "Wookipedia MobileUITests";
+			productReference = A7371F9C1FD1CD7C00E2B61A /* Wookipedia MobileUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A7371F751FD1CD7B00E2B61A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Garrett Votaw";
+				TargetAttributes = {
+					A7371F7C1FD1CD7B00E2B61A = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					A7371F901FD1CD7B00E2B61A = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A7371F7C1FD1CD7B00E2B61A;
+					};
+					A7371F9B1FD1CD7B00E2B61A = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A7371F7C1FD1CD7B00E2B61A;
+					};
+				};
+			};
+			buildConfigurationList = A7371F781FD1CD7B00E2B61A /* Build configuration list for PBXProject "Wookipedia Mobile" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A7371F741FD1CD7B00E2B61A;
+			productRefGroup = A7371F7E1FD1CD7B00E2B61A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A7371F7C1FD1CD7B00E2B61A /* Wookipedia Mobile */,
+				A7371F901FD1CD7B00E2B61A /* Wookipedia MobileTests */,
+				A7371F9B1FD1CD7B00E2B61A /* Wookipedia MobileUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A7371F7B1FD1CD7B00E2B61A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7371F8B1FD1CD7B00E2B61A /* LaunchScreen.storyboard in Resources */,
+				A7371F881FD1CD7B00E2B61A /* Assets.xcassets in Resources */,
+				A7371F861FD1CD7B00E2B61A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7371F8F1FD1CD7B00E2B61A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7371F9A1FD1CD7B00E2B61A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A7371F791FD1CD7B00E2B61A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7371F831FD1CD7B00E2B61A /* ViewController.swift in Sources */,
+				A7371F811FD1CD7B00E2B61A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7371F8D1FD1CD7B00E2B61A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7371F961FD1CD7B00E2B61A /* Wookipedia_MobileTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7371F981FD1CD7B00E2B61A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7371FA11FD1CD7C00E2B61A /* Wookipedia_MobileUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A7371F931FD1CD7B00E2B61A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A7371F7C1FD1CD7B00E2B61A /* Wookipedia Mobile */;
+			targetProxy = A7371F921FD1CD7B00E2B61A /* PBXContainerItemProxy */;
+		};
+		A7371F9E1FD1CD7C00E2B61A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A7371F7C1FD1CD7B00E2B61A /* Wookipedia Mobile */;
+			targetProxy = A7371F9D1FD1CD7C00E2B61A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A7371F841FD1CD7B00E2B61A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7371F851FD1CD7B00E2B61A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A7371F891FD1CD7B00E2B61A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7371F8A1FD1CD7B00E2B61A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A7371FA31FD1CD7C00E2B61A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A7371FA41FD1CD7C00E2B61A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A7371FA61FD1CD7C00E2B61A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2J2B92S4Z7;
+				INFOPLIST_FILE = "Wookipedia Mobile/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.votaw.Wookipedia-Mobile";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A7371FA71FD1CD7C00E2B61A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2J2B92S4Z7;
+				INFOPLIST_FILE = "Wookipedia Mobile/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.votaw.Wookipedia-Mobile";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A7371FA91FD1CD7C00E2B61A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2J2B92S4Z7;
+				INFOPLIST_FILE = "Wookipedia MobileTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.votaw.Wookipedia-MobileTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wookipedia Mobile.app/Wookipedia Mobile";
+			};
+			name = Debug;
+		};
+		A7371FAA1FD1CD7C00E2B61A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2J2B92S4Z7;
+				INFOPLIST_FILE = "Wookipedia MobileTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.votaw.Wookipedia-MobileTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wookipedia Mobile.app/Wookipedia Mobile";
+			};
+			name = Release;
+		};
+		A7371FAC1FD1CD7C00E2B61A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2J2B92S4Z7;
+				INFOPLIST_FILE = "Wookipedia MobileUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.votaw.Wookipedia-MobileUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Wookipedia Mobile";
+			};
+			name = Debug;
+		};
+		A7371FAD1FD1CD7C00E2B61A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2J2B92S4Z7;
+				INFOPLIST_FILE = "Wookipedia MobileUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.votaw.Wookipedia-MobileUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Wookipedia Mobile";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A7371F781FD1CD7B00E2B61A /* Build configuration list for PBXProject "Wookipedia Mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7371FA31FD1CD7C00E2B61A /* Debug */,
+				A7371FA41FD1CD7C00E2B61A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7371FA51FD1CD7C00E2B61A /* Build configuration list for PBXNativeTarget "Wookipedia Mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7371FA61FD1CD7C00E2B61A /* Debug */,
+				A7371FA71FD1CD7C00E2B61A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7371FA81FD1CD7C00E2B61A /* Build configuration list for PBXNativeTarget "Wookipedia MobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7371FA91FD1CD7C00E2B61A /* Debug */,
+				A7371FAA1FD1CD7C00E2B61A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7371FAB1FD1CD7C00E2B61A /* Build configuration list for PBXNativeTarget "Wookipedia MobileUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7371FAC1FD1CD7C00E2B61A /* Debug */,
+				A7371FAD1FD1CD7C00E2B61A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A7371F751FD1CD7B00E2B61A /* Project object */;
+}
