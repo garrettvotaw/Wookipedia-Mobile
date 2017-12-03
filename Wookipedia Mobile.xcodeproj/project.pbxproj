@@ -14,6 +14,10 @@
 		A7371F8B1FD1CD7B00E2B61A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7371F891FD1CD7B00E2B61A /* LaunchScreen.storyboard */; };
 		A7371F961FD1CD7B00E2B61A /* Wookipedia_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371F951FD1CD7B00E2B61A /* Wookipedia_MobileTests.swift */; };
 		A7371FA11FD1CD7C00E2B61A /* Wookipedia_MobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371FA01FD1CD7C00E2B61A /* Wookipedia_MobileUITests.swift */; };
+		A7371FAF1FD1E7C700E2B61A /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371FAE1FD1E7C700E2B61A /* CharacterModel.swift */; };
+		A7371FB11FD1E9F400E2B61A /* StarshipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371FB01FD1E9F400E2B61A /* StarshipModel.swift */; };
+		A7371FB31FD1EA4A00E2B61A /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371FB21FD1EA4A00E2B61A /* VehicleModel.swift */; };
+		A7371FB61FD1ECDF00E2B61A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371FB51FD1ECDF00E2B61A /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		A7371F9C1FD1CD7C00E2B61A /* Wookipedia MobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wookipedia MobileUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7371FA01FD1CD7C00E2B61A /* Wookipedia_MobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wookipedia_MobileUITests.swift; sourceTree = "<group>"; };
 		A7371FA21FD1CD7C00E2B61A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7371FAE1FD1E7C700E2B61A /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		A7371FB01FD1E9F400E2B61A /* StarshipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipModel.swift; sourceTree = "<group>"; };
+		A7371FB21FD1EA4A00E2B61A /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
+		A7371FB51FD1ECDF00E2B61A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,8 @@
 			children = (
 				A7371F801FD1CD7B00E2B61A /* AppDelegate.swift */,
 				A7371F821FD1CD7B00E2B61A /* ViewController.swift */,
+				A7371FB51FD1ECDF00E2B61A /* DetailViewController.swift */,
+				A7371FB41FD1EADA00E2B61A /* Model */,
 				A7371F841FD1CD7B00E2B61A /* Main.storyboard */,
 				A7371F871FD1CD7B00E2B61A /* Assets.xcassets */,
 				A7371F891FD1CD7B00E2B61A /* LaunchScreen.storyboard */,
@@ -123,6 +133,16 @@
 				A7371FA21FD1CD7C00E2B61A /* Info.plist */,
 			);
 			path = "Wookipedia MobileUITests";
+			sourceTree = "<group>";
+		};
+		A7371FB41FD1EADA00E2B61A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A7371FAE1FD1E7C700E2B61A /* CharacterModel.swift */,
+				A7371FB01FD1E9F400E2B61A /* StarshipModel.swift */,
+				A7371FB21FD1EA4A00E2B61A /* VehicleModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +280,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7371F831FD1CD7B00E2B61A /* ViewController.swift in Sources */,
+				A7371FB31FD1EA4A00E2B61A /* VehicleModel.swift in Sources */,
+				A7371FB11FD1E9F400E2B61A /* StarshipModel.swift in Sources */,
+				A7371FB61FD1ECDF00E2B61A /* DetailViewController.swift in Sources */,
+				A7371FAF1FD1E7C700E2B61A /* CharacterModel.swift in Sources */,
 				A7371F811FD1CD7B00E2B61A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
