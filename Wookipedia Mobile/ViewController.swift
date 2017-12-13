@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let client = SWAPIClient()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,5 +25,25 @@ class ViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+    @IBAction func characterTapped() {
+        
+    }
+    
+    @IBAction func vehicleTapped() {}
+    
+    @IBAction func starshipTapped() {}
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "VehicleSegue" {
+            if let nextView = segue.destination as? VehicleDetailViewController {
+                nextView.isStarship = false
+            }
+        } else {
+            if let nextView = segue.destination as? VehicleDetailViewController {
+                nextView.isStarship = true
+            }
+        }
+    }
+    
 }
 

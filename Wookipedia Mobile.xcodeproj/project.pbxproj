@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7211ABB1FD4675500DF8F3A /* VehicleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7211ABA1FD4675500DF8F3A /* VehicleDetailViewController.swift */; };
+		A723ABC01FD5F212005F5C8E /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A723ABBF1FD5F212005F5C8E /* EndPoint.swift */; };
+		A723ABC31FD5F327005F5C8E /* JSONDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A723ABC21FD5F327005F5C8E /* JSONDownloader.swift */; };
+		A730AFEC1FD7C5C50009EFE1 /* SWAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A730AFEB1FD7C5C50009EFE1 /* SWAPIClient.swift */; };
 		A7371F811FD1CD7B00E2B61A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371F801FD1CD7B00E2B61A /* AppDelegate.swift */; };
 		A7371F831FD1CD7B00E2B61A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371F821FD1CD7B00E2B61A /* ViewController.swift */; };
 		A7371F861FD1CD7B00E2B61A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7371F841FD1CD7B00E2B61A /* Main.storyboard */; };
@@ -38,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A7211ABA1FD4675500DF8F3A /* VehicleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailViewController.swift; sourceTree = "<group>"; };
+		A723ABBF1FD5F212005F5C8E /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		A723ABC21FD5F327005F5C8E /* JSONDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDownloader.swift; sourceTree = "<group>"; };
+		A730AFEB1FD7C5C50009EFE1 /* SWAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIClient.swift; sourceTree = "<group>"; };
 		A7371F7D1FD1CD7B00E2B61A /* Wookipedia Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wookipedia Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7371F801FD1CD7B00E2B61A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7371F821FD1CD7B00E2B61A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +90,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A723ABBE1FD5F1FA005F5C8E /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				A723ABBF1FD5F212005F5C8E /* EndPoint.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		A723ABC11FD5F316005F5C8E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A723ABC21FD5F327005F5C8E /* JSONDownloader.swift */,
+				A730AFEB1FD7C5C50009EFE1 /* SWAPIClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		A7371F741FD1CD7B00E2B61A = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +133,8 @@
 				A7371F801FD1CD7B00E2B61A /* AppDelegate.swift */,
 				A7371F821FD1CD7B00E2B61A /* ViewController.swift */,
 				A7371FB51FD1ECDF00E2B61A /* DetailViewController.swift */,
+				A7211ABA1FD4675500DF8F3A /* VehicleDetailViewController.swift */,
+				A723ABC11FD5F316005F5C8E /* Networking */,
 				A7371FB41FD1EADA00E2B61A /* Model */,
 				A7371F841FD1CD7B00E2B61A /* Main.storyboard */,
 				A7371F871FD1CD7B00E2B61A /* Assets.xcassets */,
@@ -138,6 +165,7 @@
 		A7371FB41FD1EADA00E2B61A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A723ABBE1FD5F1FA005F5C8E /* EndPoint */,
 				A7371FAE1FD1E7C700E2B61A /* CharacterModel.swift */,
 				A7371FB01FD1E9F400E2B61A /* StarshipModel.swift */,
 				A7371FB21FD1EA4A00E2B61A /* VehicleModel.swift */,
@@ -279,12 +307,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7211ABB1FD4675500DF8F3A /* VehicleDetailViewController.swift in Sources */,
 				A7371F831FD1CD7B00E2B61A /* ViewController.swift in Sources */,
+				A723ABC01FD5F212005F5C8E /* EndPoint.swift in Sources */,
 				A7371FB31FD1EA4A00E2B61A /* VehicleModel.swift in Sources */,
 				A7371FB11FD1E9F400E2B61A /* StarshipModel.swift in Sources */,
 				A7371FB61FD1ECDF00E2B61A /* DetailViewController.swift in Sources */,
+				A723ABC31FD5F327005F5C8E /* JSONDownloader.swift in Sources */,
 				A7371FAF1FD1E7C700E2B61A /* CharacterModel.swift in Sources */,
 				A7371F811FD1CD7B00E2B61A /* AppDelegate.swift in Sources */,
+				A730AFEC1FD7C5C50009EFE1 /* SWAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

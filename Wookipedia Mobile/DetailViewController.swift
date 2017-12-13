@@ -10,19 +10,25 @@ import UIKit
 
 class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    let client = SWAPIClient()
+    var model = [Character]()
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 3
+        return model.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "Chewy"
+        return model[row].name
     }
     
-
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        configureView(model: model[row])
+    }
+    
     @IBOutlet weak var englishButton: UIButton!
     @IBOutlet weak var metricButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
@@ -32,12 +38,20 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var eyeColorLabel: UILabel!
     @IBOutlet weak var hairColorLabel: UILabel!
     @IBOutlet weak var characterPicker: UIPickerView!
+    let character: Character? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         characterPicker.delegate = self
         characterPicker.dataSource = self
-        // Do any additional setup after loading the view.
+        let enumthing = Searchables.people
+        print(enumthing.url)
+        client.getCharacters(url: enumthing.url) {characters, error in
+            if let characters = characters {
+                self.model = characters
+                self.characterPicker.reloadAllComponents()
+            }
+        }
     }
     
     @IBAction func englishPressed() {
