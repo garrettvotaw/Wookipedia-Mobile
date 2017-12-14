@@ -12,12 +12,10 @@ class JsonDownloader {
     var baseUrl = URL(string: "https://swapi.co/api")
 
     typealias JSON = [String : Any]
-    func jsonTask(with request: URLRequest, completionHandler completion: @escaping (JSON?, Error?) -> Void) -> URLSessionDataTask {
+    func jsonTask(with request: URLRequest, completionHandler completion: @escaping (JSON?, SwapiError?) -> Void) -> URLSessionDataTask {
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: request) {data, response, error in
-            guard let httpResponse = response as? HTTPURLResponse else {
-                return
-            }
+            guard let httpResponse = response as? HTTPURLResponse else { completion(nil, .networkRequestFailed) ;return }
             
             if httpResponse.statusCode == 200 {
                 if let data = data {
@@ -25,18 +23,17 @@ class JsonDownloader {
                         if let json = try JSONSerialization.jsonObject(with: data) as? JSON {
                             completion(json, nil)
                         } else {
-                            completion(nil, error)
+                            completion(nil, .invalidData)
                         }
                     } catch {
-                        print(error)
+                        completion(nil, .invalidData)
                     }
                 } else {
                     print("an Error occured")
                 }
             } else {
-                print(httpResponse.statusCode)
+                completion(nil, .networkRequestFailed)
             }
-            
         }
         return task
     }

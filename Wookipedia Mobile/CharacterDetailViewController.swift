@@ -12,6 +12,8 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     let client = SWAPIClient()
     var model = [Character]()
+    var selectedCharacter: Character!
+    var isMetric = true
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -27,6 +29,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         configureView(model: model[row])
+        selectedCharacter = model[row]
     }
     
     @IBOutlet weak var englishButton: UIButton!
@@ -44,12 +47,13 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         super.viewDidLoad()
         characterPicker.delegate = self
         characterPicker.dataSource = self
-        let enumthing = Searchables.people
-        print(enumthing.url)
-        client.getCharacters(url: enumthing.url) {characters, error in
+        let search = Searchables.people
+        client.getCharacters(url: search.url) { [unowned self] characters, error in
             if let characters = characters {
-                self.model = characters
+                self.model = characters.sorted { $0.name < $1.name }
                 self.characterPicker.reloadAllComponents()
+                self.configureView(model: self.model[0])
+                self.selectedCharacter = self.model[0]
             }
         }
     }
@@ -57,20 +61,34 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBAction func englishPressed() {
         englishButton.setTitleColor(.white, for: .normal)
         metricButton.setTitleColor(.gray, for: .normal)
+        heightLabel.text = "\(selectedCharacter.height.englishUnits) feet"
+        isMetric = false
     }
     
     @IBAction func metricPressed() {
         englishButton.setTitleColor(.gray, for: .normal)
         metricButton.setTitleColor(.white, for: .normal)
+        heightLabel.text = "\(selectedCharacter.height.metricUnits) meters"
+        isMetric = true
     }
     
     func configureView(model: Character) {
+        
+        if isMetric {
+            heightLabel.text = "\(model.height) meters"
+        } else {
+            heightLabel.text = "\(model.height.englishUnits) feet"
+        }
+        
         nameLabel.text = model.name
         birthdayLabel.text = model.birthday
-        homePlanetLabel.text = model.homeworld
-        heightLabel.text = String(model.height)
         eyeColorLabel.text = model.eyeColor
         hairColorLabel.text = model.hairColor
+        client.getHomeWorld(character: model) { [unowned self] home, error in
+            if let home = home {
+                self.homePlanetLabel.text = home.name
+            }
+        }
     }
 }
 

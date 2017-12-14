@@ -12,8 +12,9 @@ import Foundation
 struct Character {
     let name: String
     let birthday: String
-    let homeworld: String?
-    let height: String
+    let homeworld: String
+    var homeworldName: String?
+    let height: Double
     let eyeColor: String
     let hairColor: String
     let associateVehicles: [Vehicle]?
@@ -21,12 +22,34 @@ struct Character {
 
 extension Character {
     init? (json: [String : Any]) {
-        self.name = json["name"] as! String
-        self.birthday = json["birth_year"] as! String
-        self.homeworld = nil
-        self.height = json["height"] as! String
-        self.eyeColor = json["eye_color"] as! String
-        self.hairColor = json["hair_color"] as! String
+        guard let name = json["name"] as? String,
+            let birthday = json["birth_year"] as? String,
+            let homeworld = json["homeworld"] as? String,
+            let height = json["height"] as? String,
+            let eyeColor = json["eye_color"] as? String,
+            let hairColor = json["hair_color"] as? String
+            else { print("errors happened"); return nil }
+        
+        guard let heightNumber = Double(height) else {return nil}
+        
+        self.name = name
+        self.birthday = birthday
+        self.homeworld = homeworld
+        self.height = heightNumber/100
+        self.eyeColor = eyeColor
+        self.hairColor = hairColor
         self.associateVehicles = nil
+        self.homeworldName = nil
+    }
+}
+
+
+extension Double {
+    var englishUnits: Double {
+        return Double(Int(((self)/0.3)*100))/100
+    }
+    
+    var metricUnits: Double {
+        return self
     }
 }

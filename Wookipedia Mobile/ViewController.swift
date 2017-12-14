@@ -25,13 +25,6 @@ class ViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-    @IBAction func characterTapped() {
-        
-    }
-    
-    @IBAction func vehicleTapped() {}
-    
-    @IBAction func starshipTapped() {}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "VehicleSegue" {

@@ -14,11 +14,9 @@ protocol Endpoint {
 }
 
 extension Endpoint {
-    
     var base: String {
         return "http://swapi.co/api/"
     }
-    
 }
 
 

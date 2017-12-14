@@ -21,7 +21,10 @@
 		A7371FAF1FD1E7C700E2B61A /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371FAE1FD1E7C700E2B61A /* CharacterModel.swift */; };
 		A7371FB11FD1E9F400E2B61A /* StarshipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371FB01FD1E9F400E2B61A /* StarshipModel.swift */; };
 		A7371FB31FD1EA4A00E2B61A /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371FB21FD1EA4A00E2B61A /* VehicleModel.swift */; };
-		A7371FB61FD1ECDF00E2B61A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371FB51FD1ECDF00E2B61A /* DetailViewController.swift */; };
+		A7371FB61FD1ECDF00E2B61A /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371FB51FD1ECDF00E2B61A /* CharacterDetailViewController.swift */; };
+		A7A99C331FE0D9F300766ECE /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A99C321FE0D9F300766ECE /* HomeModel.swift */; };
+		A7A99C351FE0E19700766ECE /* HomeworldDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A99C341FE0E19700766ECE /* HomeworldDownloader.swift */; };
+		A7B34B281FE2EC3200391EA7 /* SWAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B34B271FE2EC3200391EA7 /* SWAPIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +65,10 @@
 		A7371FAE1FD1E7C700E2B61A /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		A7371FB01FD1E9F400E2B61A /* StarshipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipModel.swift; sourceTree = "<group>"; };
 		A7371FB21FD1EA4A00E2B61A /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
-		A7371FB51FD1ECDF00E2B61A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A7371FB51FD1ECDF00E2B61A /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		A7A99C321FE0D9F300766ECE /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		A7A99C341FE0E19700766ECE /* HomeworldDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworldDownloader.swift; sourceTree = "<group>"; };
+		A7B34B271FE2EC3200391EA7 /* SWAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 			children = (
 				A723ABC21FD5F327005F5C8E /* JSONDownloader.swift */,
 				A730AFEB1FD7C5C50009EFE1 /* SWAPIClient.swift */,
+				A7A99C341FE0E19700766ECE /* HomeworldDownloader.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -132,7 +139,7 @@
 			children = (
 				A7371F801FD1CD7B00E2B61A /* AppDelegate.swift */,
 				A7371F821FD1CD7B00E2B61A /* ViewController.swift */,
-				A7371FB51FD1ECDF00E2B61A /* DetailViewController.swift */,
+				A7371FB51FD1ECDF00E2B61A /* CharacterDetailViewController.swift */,
 				A7211ABA1FD4675500DF8F3A /* VehicleDetailViewController.swift */,
 				A723ABC11FD5F316005F5C8E /* Networking */,
 				A7371FB41FD1EADA00E2B61A /* Model */,
@@ -167,6 +174,8 @@
 			children = (
 				A723ABBE1FD5F1FA005F5C8E /* EndPoint */,
 				A7371FAE1FD1E7C700E2B61A /* CharacterModel.swift */,
+				A7B34B271FE2EC3200391EA7 /* SWAPIError.swift */,
+				A7A99C321FE0D9F300766ECE /* HomeModel.swift */,
 				A7371FB01FD1E9F400E2B61A /* StarshipModel.swift */,
 				A7371FB21FD1EA4A00E2B61A /* VehicleModel.swift */,
 			);
@@ -309,11 +318,14 @@
 			files = (
 				A7211ABB1FD4675500DF8F3A /* VehicleDetailViewController.swift in Sources */,
 				A7371F831FD1CD7B00E2B61A /* ViewController.swift in Sources */,
+				A7A99C331FE0D9F300766ECE /* HomeModel.swift in Sources */,
 				A723ABC01FD5F212005F5C8E /* EndPoint.swift in Sources */,
 				A7371FB31FD1EA4A00E2B61A /* VehicleModel.swift in Sources */,
 				A7371FB11FD1E9F400E2B61A /* StarshipModel.swift in Sources */,
-				A7371FB61FD1ECDF00E2B61A /* DetailViewController.swift in Sources */,
+				A7371FB61FD1ECDF00E2B61A /* CharacterDetailViewController.swift in Sources */,
 				A723ABC31FD5F327005F5C8E /* JSONDownloader.swift in Sources */,
+				A7A99C351FE0E19700766ECE /* HomeworldDownloader.swift in Sources */,
+				A7B34B281FE2EC3200391EA7 /* SWAPIError.swift in Sources */,
 				A7371FAF1FD1E7C700E2B61A /* CharacterModel.swift in Sources */,
 				A7371F811FD1CD7B00E2B61A /* AppDelegate.swift in Sources */,
 				A730AFEC1FD7C5C50009EFE1 /* SWAPIClient.swift in Sources */,
