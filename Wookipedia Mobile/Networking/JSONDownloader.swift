@@ -16,7 +16,6 @@ class JsonDownloader {
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: request) {data, response, error in
             guard let httpResponse = response as? HTTPURLResponse else { completion(nil, .networkRequestFailed) ;return }
-            
             if httpResponse.statusCode == 200 {
                 if let data = data {
                     do {
@@ -29,7 +28,7 @@ class JsonDownloader {
                         completion(nil, .invalidData)
                     }
                 } else {
-                    print("an Error occured")
+                    completion(nil, .networkRequestFailed)
                 }
             } else {
                 completion(nil, .networkRequestFailed)

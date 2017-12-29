@@ -17,11 +17,9 @@ class SWAPIClient {
         let task = downloader.jsonTask(with: request) {json, error in
             DispatchQueue.main.async {
                 if let json = json {
-                    print(json)
-                    guard let results = json["results"] as? [[String : Any]] else { completion(nil, error); return }
+                    guard let results = json["results"] as? [[String : Any]] else { completion(nil, .invalidKey); return }
                     let characters = results.flatMap { Character(json: $0) }
                     completion(characters, nil)
-                    
                 } else if let error = error {
                     completion(nil, error)
                 }
@@ -36,9 +34,36 @@ class SWAPIClient {
         let task = downloader.jsonTask(with: request) {json, error in
             DispatchQueue.main.async {
                 if let json = json {
-                    print(json)
                     let homeworld = Homeworld(json: json)
                     completion(homeworld, nil)
+                } else if let error = error {
+                    completion(nil, error)
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    func getVehicles(searchable: Searchables, completionHandler completion: @escaping ([Vehicle]?, SwapiError?) -> Void) {
+        var url: URL!
+        if searchable == .vehicles {
+            url = searchable.url
+        } else if searchable == .starships {
+            url = searchable.url
+        }
+        
+        let request = URLRequest(url: url)
+        let task = downloader.jsonTask(with: request) {json, error in
+            DispatchQueue.main.async {
+                if let json = json {
+                    guard let results = json["results"] as? [[String: Any]] else  {completion(nil, .invalidKey); return}
+                    if searchable == .vehicles {
+                        let vehicles = results.flatMap { Vehicle(jsonVehicle: $0) }
+                        completion(vehicles, nil)
+                    } else {
+                        let starships = results.flatMap { Vehicle(jsonStarship: $0) }
+                        completion(starships, nil)
+                    }
                 } else if let error = error {
                     completion(nil, error)
                 }

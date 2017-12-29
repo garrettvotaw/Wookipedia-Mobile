@@ -10,8 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let client = SWAPIClient()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

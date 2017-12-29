@@ -41,6 +41,9 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var eyeColorLabel: UILabel!
     @IBOutlet weak var hairColorLabel: UILabel!
     @IBOutlet weak var characterPicker: UIPickerView!
+    @IBOutlet weak var smallesCharacterLabel: UILabel!
+    @IBOutlet weak var largestCharacterLabel: UILabel!
+
     let character: Character? = nil
     
     override func viewDidLoad() {
@@ -54,6 +57,13 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 self.characterPicker.reloadAllComponents()
                 self.configureView(model: self.model[0])
                 self.selectedCharacter = self.model[0]
+            } else if let error = error {
+                switch error {
+                case .invalidData: print("Invalid Data, please check the url")
+                case .networkRequestFailed: AlertController.presentAlert(withVC: self, title: "Network Request Failed", message: "Please check your connection.")
+                case .invalidKey: print("Invalid Key, please check your parser")
+                default: print(error)
+                }
             }
         }
     }
@@ -73,13 +83,11 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     func configureView(model: Character) {
-        
         if isMetric {
             heightLabel.text = "\(model.height) meters"
         } else {
             heightLabel.text = "\(model.height.englishUnits) feet"
         }
-        
         nameLabel.text = model.name
         birthdayLabel.text = model.birthday
         eyeColorLabel.text = model.eyeColor
@@ -89,24 +97,18 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 self.homePlanetLabel.text = home.name
             }
         }
+        smallesCharacterLabel.text = shortestCharacter
+        largestCharacterLabel.text = tallestCharacter
     }
+    
+    var shortestCharacter: String {
+        let newModel = model.sorted {$0.height < $1.height}
+        return newModel[0].name
+    }
+    
+    var tallestCharacter: String {
+        let newModel = model.sorted {$0.height > $1.height}
+        return newModel[0].name
+    }
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
