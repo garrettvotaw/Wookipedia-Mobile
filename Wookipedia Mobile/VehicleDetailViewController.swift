@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VehicleDetailViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+class VehicleDetailViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -47,6 +47,7 @@ class VehicleDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     @IBOutlet weak var metricButton: UIButton!
     @IBOutlet weak var englishButton: UIButton!
     var isMetric = true
+    var isCredits = true
     
     
     
@@ -63,6 +64,15 @@ class VehicleDetailViewController: UIViewController, UIPickerViewDataSource, UIP
                     self.vehiclePicker.reloadAllComponents()
                     self.configureView(model: vehicles[0])
                     self.selectedVehicle = vehicles[0]
+                } else if let error = error {
+                    switch error {
+                    case .invalidData: print("Invalid Data, please check the url")
+                    case .networkRequestFailed: AlertController.presentAlert(withVC: self, title: "Network Request Failed", message: "Please check your connection.") { [unowned self] action in
+                        self.navigationController?.popToRootViewController(animated: true)
+                        }
+                    case .invalidKey: print("Invalid Key, please check your parser")
+                    default: print(error)
+                    }
                 }
             }
         } else if isStarship == true {
@@ -73,6 +83,15 @@ class VehicleDetailViewController: UIViewController, UIPickerViewDataSource, UIP
                     self.vehiclePicker.reloadAllComponents()
                     self.configureView(model: starships[0])
                     self.selectedVehicle = starships[0]
+                } else if let error = error {
+                    switch error {
+                    case .invalidData: print("Invalid Data, please check the url")
+                    case .networkRequestFailed: AlertController.presentAlert(withVC: self, title: "Network Request Failed", message: "Please check your connection.") { [unowned self] action in
+                        self.navigationController?.popToRootViewController(animated: true)
+                        }
+                    case .invalidKey: print("Invalid Key, please check your parser")
+                    default: print(error)
+                    }
                 }
             }
         }
@@ -85,50 +104,64 @@ class VehicleDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         } else {
             lengthLabel.text = "\(model.length.englishUnits) feet"
         }
+        
+        if isCredits {
+            costLabel.text = "\(model.cost)"
+        } else {
+            guard let cost = Double(model.cost) else {
+                if model.cost == "unknown" {
+                    costLabel.text = model.cost
+                }
+                return
+            }
+            costLabel.text = "\(cost.dollarValue)"
+        }
         vehicleNameLabel.text = model.name
         makeLabel.text = model.make
-        costLabel.text = model.cost
         classLabel.text = model.`class`
         crewLabel.text = model.crew
         smallestLabel.text = shortestCharacter
         largestLabel.text = tallestCharacter
+    }
+    
+    @IBAction func currencyExchangePressed(_ sender: UIBarButtonItem) {
         
     }
     
-    
     @IBAction func creditsPushed() {
+        costLabel.text = selectedVehicle?.cost
         usdButton.setTitleColor(.gray, for: .normal)
         creditsButton.setTitleColor(.white, for: .normal)
+        isCredits = true
     }
     
     @IBAction func USDPushed() {
-//        let alert = UIAlertController(title: "Exchange Rate", message: "Please enter the number of dollars 1 Credit is worth", preferredStyle: .alert)
-//
-//        alert.addTextField {textfield in
-//            textfield.keyboardType = UIKeyboardType.decimalPad
-//            self.exchangeRate = Double(textfield.text!)
-//        }
-//        let action = UIAlertAction(title: "OK", style: .default) {alert in
-//            self.costLabel.text = String(describing: self.exchangeRate)
-//        }
-//        alert.addAction(action)
-//        present(alert, animated: true, completion: nil)
+        isCredits = false
         usdButton.setTitleColor(.white, for: .normal)
         creditsButton.setTitleColor(.gray, for: .normal)
+        if ExchangeRate.dollarValue == 0.0 {
+            AlertController.presentAlert(withVC: self, title: "Exchange Rate Error", message: "Please enter an exchange rate", completionHandler: nil)
+            costLabel.text = "Error"
+        } else {
+            guard let selectedVehicle = selectedVehicle, let cost = Double(selectedVehicle.cost) else {return}
+            costLabel.text = String(cost.dollarValue)
+        }
     }
     
     @IBAction func metricPushed() {
         englishButton.setTitleColor(.gray, for: .normal)
         metricButton.setTitleColor(.white, for: .normal)
         isMetric = true
-        lengthLabel.text = "\(selectedVehicle!.length.metricUnits.description) meters"
+        guard let selectedVehicle = selectedVehicle else {return}
+        lengthLabel.text = "\(selectedVehicle.length.metricUnits.description) meters"
     }
     
     @IBAction func englishPushed() {
         englishButton.setTitleColor(.white, for: .normal)
         metricButton.setTitleColor(.gray, for: .normal)
         isMetric = false
-        lengthLabel.text = "\(selectedVehicle!.length.englishUnits.description) feet"
+        guard let selectedVehicle = selectedVehicle else {return}
+        lengthLabel.text = "\(selectedVehicle.length.englishUnits.description) feet"
     }
     
     var shortestCharacter: String {
@@ -140,6 +173,10 @@ class VehicleDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         let newModel = model.sorted {$0.length > $1.length}
         return newModel[0].name
     }
-    
+}
 
+extension Double {
+    var dollarValue: Double {
+        return self * ExchangeRate.dollarValue
+    }
 }

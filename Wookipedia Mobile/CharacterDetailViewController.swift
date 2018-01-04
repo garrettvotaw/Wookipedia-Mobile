@@ -12,7 +12,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     let client = SWAPIClient()
     var model = [Character]()
-    var selectedCharacter: Character!
+    var selectedCharacter: Character? = nil
     var isMetric = true
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -60,7 +60,9 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             } else if let error = error {
                 switch error {
                 case .invalidData: print("Invalid Data, please check the url")
-                case .networkRequestFailed: AlertController.presentAlert(withVC: self, title: "Network Request Failed", message: "Please check your connection.")
+                case .networkRequestFailed: AlertController.presentAlert(withVC: self, title: "Network Request Failed", message: "Please check your connection.") { [unowned self] action in
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
                 case .invalidKey: print("Invalid Key, please check your parser")
                 default: print(error)
                 }
@@ -71,6 +73,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBAction func englishPressed() {
         englishButton.setTitleColor(.white, for: .normal)
         metricButton.setTitleColor(.gray, for: .normal)
+        guard let selectedCharacter = selectedCharacter else {return}
         heightLabel.text = "\(selectedCharacter.height.englishUnits) feet"
         isMetric = false
     }
@@ -78,6 +81,7 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBAction func metricPressed() {
         englishButton.setTitleColor(.gray, for: .normal)
         metricButton.setTitleColor(.white, for: .normal)
+        guard let selectedCharacter = selectedCharacter else {return}
         heightLabel.text = "\(selectedCharacter.height.metricUnits) meters"
         isMetric = true
     }
@@ -92,9 +96,10 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         birthdayLabel.text = model.birthday
         eyeColorLabel.text = model.eyeColor
         hairColorLabel.text = model.hairColor
-        client.getHomeWorld(character: model) { [unowned self] home, error in
+        client.getHomeWorld(character: model) { [weak self] home, error in
+            guard let controller = self else {return}
             if let home = home {
-                self.homePlanetLabel.text = home.name
+                controller.homePlanetLabel.text = home.name
             }
         }
         smallesCharacterLabel.text = shortestCharacter

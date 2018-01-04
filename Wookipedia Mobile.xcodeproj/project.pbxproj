@@ -25,6 +25,8 @@
 		A7A99C331FE0D9F300766ECE /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A99C321FE0D9F300766ECE /* HomeModel.swift */; };
 		A7B34B281FE2EC3200391EA7 /* SWAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B34B271FE2EC3200391EA7 /* SWAPIError.swift */; };
 		A7D52CF61FE8A2380041CEB6 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D52CF51FE8A2380041CEB6 /* AlertController.swift */; };
+		A7D68F2B1FFDABE300E3508B /* ExchangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D68F2A1FFDABE300E3508B /* ExchangeRateViewController.swift */; };
+		A7D68F2D1FFDAE5B00E3508B /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D68F2C1FFDAE5B00E3508B /* ExchangeRate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		A7A99C321FE0D9F300766ECE /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		A7B34B271FE2EC3200391EA7 /* SWAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIError.swift; sourceTree = "<group>"; };
 		A7D52CF51FE8A2380041CEB6 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		A7D68F2A1FFDABE300E3508B /* ExchangeRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateViewController.swift; sourceTree = "<group>"; };
+		A7D68F2C1FFDAE5B00E3508B /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 				A7371F821FD1CD7B00E2B61A /* ViewController.swift */,
 				A7371FB51FD1ECDF00E2B61A /* CharacterDetailViewController.swift */,
 				A7211ABA1FD4675500DF8F3A /* VehicleDetailViewController.swift */,
+				A7D68F2A1FFDABE300E3508B /* ExchangeRateViewController.swift */,
 				A723ABC11FD5F316005F5C8E /* Networking */,
 				A7371FB41FD1EADA00E2B61A /* Model */,
 				A7371F841FD1CD7B00E2B61A /* Main.storyboard */,
@@ -178,6 +183,7 @@
 				A7371FB01FD1E9F400E2B61A /* StarshipModel.swift */,
 				A7371FB21FD1EA4A00E2B61A /* VehicleModel.swift */,
 				A7D52CF51FE8A2380041CEB6 /* AlertController.swift */,
+				A7D68F2C1FFDAE5B00E3508B /* ExchangeRate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,6 +322,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D68F2B1FFDABE300E3508B /* ExchangeRateViewController.swift in Sources */,
+				A7D68F2D1FFDAE5B00E3508B /* ExchangeRate.swift in Sources */,
 				A7D52CF61FE8A2380041CEB6 /* AlertController.swift in Sources */,
 				A7211ABB1FD4675500DF8F3A /* VehicleDetailViewController.swift in Sources */,
 				A7371F831FD1CD7B00E2B61A /* ViewController.swift in Sources */,

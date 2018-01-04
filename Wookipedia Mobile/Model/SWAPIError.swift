@@ -14,4 +14,6 @@ enum SwapiError: Error {
     case urlFailed
     case invalidExchangeRate
     case invalidKey
+    case emptyExchangeRate
+    case invalidEntry
 }
