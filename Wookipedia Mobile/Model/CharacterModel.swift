@@ -21,16 +21,16 @@ struct Character {
 }
 
 extension Character {
-    init? (json: [String : Any]) {
+    init(json: [String : Any]) throws {
         guard let name = json["name"] as? String,
             let birthday = json["birth_year"] as? String,
             let homeworld = json["homeworld"] as? String,
             let height = json["height"] as? String,
             let eyeColor = json["eye_color"] as? String,
             let hairColor = json["hair_color"] as? String
-            else { print("errors happened"); return nil }
+            else { throw SwapiError.invalidKey }
         
-        guard let heightNumber = Double(height) else {return nil}
+        guard let heightNumber = Double(height) else { throw SwapiError.invalidData }
         
         self.name = name
         self.birthday = birthday

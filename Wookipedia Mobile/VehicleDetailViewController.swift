@@ -10,29 +10,7 @@ import UIKit
 
 class VehicleDetailViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return model.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return model[row].name
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        configureView(model: model[row])
-        selectedVehicle = model[row]
-    }
-    
-    var exchangeRate: Double?
-    var model = [Vehicle]()
-    var isStarship: Bool = true
-    var client = SWAPIClient()
-    let url = Searchables.vehicles.url
-    var selectedVehicle: Vehicle? = nil
+    //MARK: IB Outlets
     @IBOutlet weak var vehicleNameLabel: UILabel!
     @IBOutlet weak var makeLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
@@ -46,12 +24,20 @@ class VehicleDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     @IBOutlet weak var creditsButton: UIButton!
     @IBOutlet weak var metricButton: UIButton!
     @IBOutlet weak var englishButton: UIButton!
+    
+    //MARK: Member Variables
     var isMetric = true
     var isCredits = true
+    var exchangeRate: Double?
+    var model = [Vehicle]()
+    var isStarship: Bool = true
+    var client = SWAPIClient()
+    let url = Searchables.vehicles.url
+    var selectedVehicle: Vehicle? = nil
     
     
     
-    
+    //MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         vehiclePicker.delegate = self
@@ -70,7 +56,7 @@ class VehicleDetailViewController: UIViewController, UIPickerViewDataSource, UIP
                     case .networkRequestFailed: AlertController.presentAlert(withVC: self, title: "Network Request Failed", message: "Please check your connection.") { [unowned self] action in
                         self.navigationController?.popToRootViewController(animated: true)
                         }
-                    case .invalidKey: print("Invalid Key, please check your parser")
+                    case .invalidKey: AlertController.presentAlert(withVC: self, title: "Invalid Key", message: "Invalid key in parser. Please contact developer if the issue persists", completionHandler: nil)
                     default: print(error)
                     }
                 }
@@ -89,7 +75,7 @@ class VehicleDetailViewController: UIViewController, UIPickerViewDataSource, UIP
                     case .networkRequestFailed: AlertController.presentAlert(withVC: self, title: "Network Request Failed", message: "Please check your connection.") { [unowned self] action in
                         self.navigationController?.popToRootViewController(animated: true)
                         }
-                    case .invalidKey: print("Invalid Key, please check your parser")
+                    case .invalidKey: AlertController.presentAlert(withVC: self, title: "Invalid Key", message: "Invalid key in parser. Please contact developer if the issue persists", completionHandler: nil)
                     default: print(error)
                     }
                 }
@@ -97,7 +83,26 @@ class VehicleDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         }
     }
     
+    //MARK: PickerView Delegate/Datasource Methods
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return model.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return model[row].name
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        configureView(model: model[row])
+        selectedVehicle = model[row]
+    }
+    
+    
+    //MARK: ConfigureView Method
     func configureView(model: Vehicle) {
         if isMetric {
             lengthLabel.text = "\(model.length) meters"
@@ -124,6 +129,8 @@ class VehicleDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         largestLabel.text = tallestCharacter
     }
     
+    
+    //MARK: IBActions
     @IBAction func currencyExchangePressed(_ sender: UIBarButtonItem) {
         
     }
@@ -175,8 +182,4 @@ class VehicleDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     }
 }
 
-extension Double {
-    var dollarValue: Double {
-        return self * ExchangeRate.dollarValue
-    }
-}
+

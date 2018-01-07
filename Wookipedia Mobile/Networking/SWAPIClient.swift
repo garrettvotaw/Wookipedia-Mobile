@@ -18,8 +18,17 @@ class SWAPIClient {
             DispatchQueue.main.async {
                 if let json = json {
                     guard let results = json["results"] as? [[String : Any]] else { completion(nil, .invalidKey); return }
-                    let characters = results.flatMap { Character(json: $0) }
-                    completion(characters, nil)
+                    var characters = [Character]()
+                    for character in results {
+                        do {
+                            characters.append(try Character(json: character))
+                        } catch {
+                            completion(nil, .invalidKey)
+                        }
+                    }
+                    if !characters.isEmpty {
+                        completion(characters, nil)
+                    }
                 } else if let error = error {
                     completion(nil, error)
                 }
@@ -34,8 +43,12 @@ class SWAPIClient {
         let task = downloader.jsonTask(with: request) {json, error in
             DispatchQueue.main.async {
                 if let json = json {
-                    let homeworld = Homeworld(json: json)
-                    completion(homeworld, nil)
+                    do {
+                        let homeworld = try Homeworld(json: json)
+                        completion(homeworld, nil)
+                    } catch {
+                        completion(nil, .invalidKey)
+                    }
                 } else if let error = error {
                     completion(nil, error)
                 }
@@ -58,11 +71,29 @@ class SWAPIClient {
                 if let json = json {
                     guard let results = json["results"] as? [[String: Any]] else  {completion(nil, .invalidKey); return}
                     if searchable == .vehicles {
-                        let vehicles = results.flatMap { Vehicle(jsonVehicle: $0) }
-                        completion(vehicles, nil)
+                        var vehicles = [Vehicle]()
+                        for vehicle in results {
+                            do {
+                                vehicles.append(try Vehicle(jsonVehicle: vehicle))
+                            } catch {
+                                completion(nil, .invalidKey)
+                            }
+                        }
+                        if !vehicles.isEmpty {
+                            completion(vehicles, nil)
+                        }
                     } else {
-                        let starships = results.flatMap { Vehicle(jsonStarship: $0) }
-                        completion(starships, nil)
+                        var starships = [Vehicle]()
+                        for starship in results {
+                            do {
+                                starships.append(try Vehicle(jsonStarship: starship))
+                            } catch {
+                                completion(nil, .invalidKey)
+                            }
+                        }
+                        if !starships.isEmpty {
+                            completion(starships, nil)
+                        }
                     }
                 } else if let error = error {
                     completion(nil, error)

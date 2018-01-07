@@ -19,7 +19,6 @@
 		A7371F961FD1CD7B00E2B61A /* Wookipedia_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371F951FD1CD7B00E2B61A /* Wookipedia_MobileTests.swift */; };
 		A7371FA11FD1CD7C00E2B61A /* Wookipedia_MobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371FA01FD1CD7C00E2B61A /* Wookipedia_MobileUITests.swift */; };
 		A7371FAF1FD1E7C700E2B61A /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371FAE1FD1E7C700E2B61A /* CharacterModel.swift */; };
-		A7371FB11FD1E9F400E2B61A /* StarshipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371FB01FD1E9F400E2B61A /* StarshipModel.swift */; };
 		A7371FB31FD1EA4A00E2B61A /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371FB21FD1EA4A00E2B61A /* VehicleModel.swift */; };
 		A7371FB61FD1ECDF00E2B61A /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7371FB51FD1ECDF00E2B61A /* CharacterDetailViewController.swift */; };
 		A7A99C331FE0D9F300766ECE /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A99C321FE0D9F300766ECE /* HomeModel.swift */; };
@@ -65,7 +64,6 @@
 		A7371FA01FD1CD7C00E2B61A /* Wookipedia_MobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wookipedia_MobileUITests.swift; sourceTree = "<group>"; };
 		A7371FA21FD1CD7C00E2B61A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7371FAE1FD1E7C700E2B61A /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
-		A7371FB01FD1E9F400E2B61A /* StarshipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipModel.swift; sourceTree = "<group>"; };
 		A7371FB21FD1EA4A00E2B61A /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
 		A7371FB51FD1ECDF00E2B61A /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		A7A99C321FE0D9F300766ECE /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
@@ -178,11 +176,10 @@
 			children = (
 				A723ABBE1FD5F1FA005F5C8E /* EndPoint */,
 				A7371FAE1FD1E7C700E2B61A /* CharacterModel.swift */,
-				A7B34B271FE2EC3200391EA7 /* SWAPIError.swift */,
 				A7A99C321FE0D9F300766ECE /* HomeModel.swift */,
-				A7371FB01FD1E9F400E2B61A /* StarshipModel.swift */,
 				A7371FB21FD1EA4A00E2B61A /* VehicleModel.swift */,
 				A7D52CF51FE8A2380041CEB6 /* AlertController.swift */,
+				A7B34B271FE2EC3200391EA7 /* SWAPIError.swift */,
 				A7D68F2C1FFDAE5B00E3508B /* ExchangeRate.swift */,
 			);
 			path = Model;
@@ -330,7 +327,6 @@
 				A7A99C331FE0D9F300766ECE /* HomeModel.swift in Sources */,
 				A723ABC01FD5F212005F5C8E /* EndPoint.swift in Sources */,
 				A7371FB31FD1EA4A00E2B61A /* VehicleModel.swift in Sources */,
-				A7371FB11FD1E9F400E2B61A /* StarshipModel.swift in Sources */,
 				A7371FB61FD1ECDF00E2B61A /* CharacterDetailViewController.swift in Sources */,
 				A723ABC31FD5F327005F5C8E /* JSONDownloader.swift in Sources */,
 				A7B34B281FE2EC3200391EA7 /* SWAPIError.swift in Sources */,

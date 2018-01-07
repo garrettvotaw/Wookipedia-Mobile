@@ -12,30 +12,8 @@ struct ExchangeRate {
     static var dollarValue: Double = 0.0
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+extension Double {
+    var dollarValue: Double {
+        return self * ExchangeRate.dollarValue
+    }
+}

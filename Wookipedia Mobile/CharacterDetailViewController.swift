@@ -10,28 +10,6 @@ import UIKit
 
 class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    let client = SWAPIClient()
-    var model = [Character]()
-    var selectedCharacter: Character? = nil
-    var isMetric = true
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return model.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return model[row].name
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        configureView(model: model[row])
-        selectedCharacter = model[row]
-    }
-    
     @IBOutlet weak var englishButton: UIButton!
     @IBOutlet weak var metricButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
@@ -45,7 +23,22 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var largestCharacterLabel: UILabel!
 
     let character: Character? = nil
+    let client = SWAPIClient()
+    var model = [Character]()
+    var selectedCharacter: Character? = nil
+    var isMetric = true
     
+    var shortestCharacter: String {
+        let newModel = model.sorted {$0.height < $1.height}
+        return newModel[0].name
+    }
+    
+    var tallestCharacter: String {
+        let newModel = model.sorted {$0.height > $1.height}
+        return newModel[0].name
+    }
+    
+    //MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         characterPicker.delegate = self
@@ -63,13 +56,33 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
                 case .networkRequestFailed: AlertController.presentAlert(withVC: self, title: "Network Request Failed", message: "Please check your connection.") { [unowned self] action in
                         self.navigationController?.popToRootViewController(animated: true)
                     }
-                case .invalidKey: print("Invalid Key, please check your parser")
+                case .invalidKey: AlertController.presentAlert(withVC: self, title: "Invalid Key", message: "Invalid key in parser. Please contact developer if the issue persists", completionHandler: nil)
                 default: print(error)
                 }
             }
         }
     }
     
+    //MARK: Delegate/Datasource Methods
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return model.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return model[row].name
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        configureView(model: model[row])
+        selectedCharacter = model[row]
+    }
+    
+    
+    //MARK: IB Actions
     @IBAction func englishPressed() {
         englishButton.setTitleColor(.white, for: .normal)
         metricButton.setTitleColor(.gray, for: .normal)
@@ -105,15 +118,4 @@ class DetailViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         smallesCharacterLabel.text = shortestCharacter
         largestCharacterLabel.text = tallestCharacter
     }
-    
-    var shortestCharacter: String {
-        let newModel = model.sorted {$0.height < $1.height}
-        return newModel[0].name
-    }
-    
-    var tallestCharacter: String {
-        let newModel = model.sorted {$0.height > $1.height}
-        return newModel[0].name
-    }
-    
 }

@@ -13,7 +13,8 @@ struct Homeworld {
 }
 
 extension Homeworld {
-    init(json: [String:Any]) {
-        self.name = json["name"] as! String
+    init(json: [String:Any]) throws {
+        guard let name = json["name"] as? String else {throw SwapiError.invalidKey}
+        self.name = name
     }
 }
