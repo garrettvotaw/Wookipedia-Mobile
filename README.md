@@ -1,0 +1,7 @@
+# Wookipedia-Mobile
+Techdegree Project 6
+A short time ago, in a Galaxy not so far away, you were taught about APIs. Now is your chance to harness the force (of newfound knowledge) and put the Star Wars API (SWAPI) to use in an iOS app.
+
+Using what you learned about APIs, Networking, Concurrency, and JSON you will get information about three types of Star Wars entities: people, vehicles and starships. Each entity type should have its own view from an UI perspective. However, they can be based on common code and/or storyboards. See below for links to the mockups for the app. Please note that even though the API is paginated, for the basic requirement of the project you only need to retrieve and display the first page of results for a given API request.
+
+In the mockup, you will notice that regardless of which view a user is on, there is a bar across the top showing the largest and smallest member of the group. In addition, because all measurements are given in metric units (meters), you will need to create a feature that convert the units to British units (inches), at a tap of a button. For starships and vehicles, students will need to create a button that can convert “Galactic Credits” to US Dollars, based on a exchange rate provided by the user in a text field.
